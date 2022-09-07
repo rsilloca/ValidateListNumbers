@@ -1,0 +1,11 @@
+<input #imageInput type="file" accept="image/*" multiple="false" class="input-file" (change)="loadImage($event)" />
+
+<!-- <div
+    style="background-image: url('{{imageURL}}'); width: 800px; height: 600px; background-size: contain; background-repeat: no-repeat; background-color: rgba(0, 0, 0, 0.5); background-position: center;">
+</div> -->
+
+<ly-img-cropper [config]="myConfig" [(scale)]="scale" (minScale)="minScale = $event" (maxScale)="maxScale = $event"
+    (ready)="ready = true" (cleaned)="ready = false" (cropped)="onCropped($event)" (loaded)="onLoaded($event)"
+    (error)="onError($event)">
+    <span>Drag and drop image</span>
+</ly-img-cropper>
